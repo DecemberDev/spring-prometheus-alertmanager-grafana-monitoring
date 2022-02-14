@@ -1,0 +1,11 @@
+groups:
+  - name: monitoring
+    rules:
+      - alert: ApplicationIsDown
+        expr: up == 0
+        for: 0m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Application is stopped or crashed"
+          description: "Run your application to start monitoring"

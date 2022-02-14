@@ -1,0 +1,17 @@
+global:
+route:
+  receiver: 'gmail'
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 10s
+  repeat_interval: 30s
+receivers:
+  - name: 'gmail'
+    email_configs:
+    - to: 'gmail to'
+      from: 'gmail from'
+      hello: 'host.docker.internal'
+      smarthost: smtp.gmail.com:587
+      auth_username: 'gmail from'
+      auth_identity: 'gmail from'
+      auth_password: 'password gmail from or gmail app password'
